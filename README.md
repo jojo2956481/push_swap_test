@@ -33,4 +33,4 @@ This project has been created as part of the 42 curriculum by pgougne and lebeys
 
 - http://lwh.free.fr/pages/algo/tri/tri.htm
 
-- https://satyadeepmaheshwari.medium.com/sorting-large-datasets-with-limited-memory-the-chunked-merge-sort-approach-318275275c81
+- https://fr.wikipedia.org/wiki/Tri_par_insertion#:~:text=Le%20tri%20par%20insertion%20est%20un%20tri%20stable%20(conservant%20l,%C3%A9l%C3%A9ment%2C%20sans%20perdre%20en%20efficacit%C3%A9.
