@@ -6,7 +6,7 @@
 /*   By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 14:23:30 by lebeyssa          #+#    #+#             */
-/*   Updated: 2025/12/11 13:46:49 by lebeyssa         ###   ########lyon.fr   */
+/*   Updated: 2025/12/12 16:23:39 by lebeyssa         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int	main(int argc, char **argv)
 	int	size;
 	int	*tab;
 	int k;
-
+	
 	if (argc <= 1)
 		return (0);
 	size = ft_checkdigit(argv, (argc - 1));
@@ -112,7 +112,7 @@ int	main(int argc, char **argv)
 		ft_printf("%s\n", "Error");
 		return (0);
 	}
-	k = insertion_sort(tab, size);
+	k = chunk_based(tab, size);
 	display(tab, size, k);
 	return (0);
 }

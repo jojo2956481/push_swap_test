@@ -6,7 +6,7 @@
 /*   By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 11:17:20 by lebeyssa          #+#    #+#             */
-/*   Updated: 2025/12/11 14:07:14 by lebeyssa         ###   ########lyon.fr   */
+/*   Updated: 2025/12/12 12:38:36 by lebeyssa         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	sa(int *a, int size_a)
 	temp = a[0];
 	a[0] = a[1];
 	a[1] = temp;
+	display_tape1(a, size_a);
 	return (1);
 }
 
@@ -66,6 +67,7 @@ int	ra(int *a, int size_a)
 		i++;
 	}
 	a[size_a - 1] = temp;
+	display_tape1(a, size_a);
 	return (1);
 }
 
@@ -85,6 +87,7 @@ int	rra(int *a, int size_a)
 		i--;
 	}
 	a[0] = temp;
+	display_tape1(a, size_a);
 	return (1);
 }
 /*

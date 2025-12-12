@@ -6,7 +6,7 @@
 /*   By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 12:41:19 by lebeyssa          #+#    #+#             */
-/*   Updated: 2025/12/11 14:10:04 by lebeyssa         ###   ########lyon.fr   */
+/*   Updated: 2025/12/12 12:57:52 by lebeyssa         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,14 +82,64 @@ int	display(int *tab, int size, int k)
 int display_tape(int *tab_a, int *tab_b, int size_a, int size_b)
 {
 	int i = 0;
+	int size;
 	__builtin_printf("|-----------------|\n");
 	__builtin_printf("| tab_a     tab_b |\n");
 	__builtin_printf("|-----------------|\n");
-	while (i < size_a)
+	size = size_a + size_b;
+	while (i < size)
 	{
 		__builtin_printf("|% 4d   || % 4d   |\n", tab_a[i], tab_b[i]);
 		i++;
 	}
 	ft_printf("%c\n");
 	return (0);
+}
+
+int display_tape1(int *tab_a, int size_a)
+{
+	int i = 0;
+	__builtin_printf("|---------|\n");
+	__builtin_printf("| tab_a   |\n");
+	__builtin_printf("|---------|\n");
+	while (i < size_a)
+	{
+		__builtin_printf("|% 4d     |\n", tab_a[i]);
+		i++;
+	}
+	ft_printf("%c\n");
+	return (0);
+}
+
+int display_tape2(int *tab_a, int size_a)
+{
+	int i = 0;
+	__builtin_printf("|---------|\n");
+	__builtin_printf("| tab_b   |\n");
+	__builtin_printf("|---------|\n");
+	while (i < size_a)
+	{
+		__builtin_printf("|% 4d     |\n", tab_a[i]);
+		i++;
+	}
+	ft_printf("%c\n");
+	return (0);
+}
+
+
+int	*ft_intdup(int *tab, int size)
+{
+	int		i;
+	int		*dest;
+
+	i = 0;
+	dest = ft_calloc(size + 1, sizeof(int));
+	if (!dest)
+		return (0);
+	while (i != size)
+	{
+		dest[i] = tab[i];
+		i++;
+	}
+	return (dest);
 }
