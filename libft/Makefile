@@ -6,12 +6,12 @@
 #    By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/06 13:31:56 by lebeyssa          #+#    #+#              #
-#    Updated: 2025/12/09 15:29:31 by lebeyssa         ###   ########lyon.fr    #
+#    Updated: 2025/12/15 15:52:30 by lebeyssa         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 CC= cc
-CFLAGS= -Werror -Wextra -Wall
+CFLAGS= -Werror -Wextra -Wall 
 INC= libft.h
 NAME= libft.a
 SRC= ft_isalnum.c\

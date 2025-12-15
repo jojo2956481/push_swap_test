@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bubble_sort.c                                      :+:      :+:    :+:   */
+/*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/10 10:16:58 by lebeyssa          #+#    #+#             */
-/*   Updated: 2025/12/15 09:10:57 by lebeyssa         ###   ########lyon.fr   */
+/*   Created: 2025/12/10 16:13:11 by lebeyssa          #+#    #+#             */
+/*   Updated: 2025/12/15 08:58:01 by lebeyssa         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,22 @@
 #include "libft.h"
 #include "ft_printf.h"
 
-int	bubble_sort(int *tab, int size)
-{
-	int	i;
-	int	j;
-	int k;
-	int count;
 
-	j = 0;
-	count = 0;
-	while (j < size -1)
+int	recup_digits(int nb, int digits)
+{
+	int i;
+
+	i = 0;
+	while (i < digits)
 	{
-		i = 0;
-		while (i < size - 1 - j)
-		{
-			k = 0;
-			while (k < i)
-			{
-				count += ra(tab, size);
-				k++;
-			}
-			if (tab[0] > tab[1])
-				count += sa(tab, size);
-			k = 0;
-			while (k < size - i)
-			{
-				count += ra(tab, size);
-				k++;
-			}
-			i++;
-		}
-		j++;
+		nb = nb / 10;
 	}
-	return (count);
+	return (nb % 10);
 }
 
+int	radix(int *tab, int size)
+{
+
+		
+	return (count);
+}

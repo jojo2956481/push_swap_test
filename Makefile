@@ -6,7 +6,7 @@
 #    By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/09 09:23:07 by lebeyssa          #+#    #+#              #
-#    Updated: 2025/12/12 16:34:35 by lebeyssa         ###   ########lyon.fr    #
+#    Updated: 2025/12/15 10:33:03 by lebeyssa         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ INC := push_swap.h
 NAME := push_swap
 OBJ_DIR := .objet
 SRC := main.c bubble_sort.c rules_a.c rules_b.c rules_both.c\
-		ft_utile.c insertion_sort.c chunk_based.c
+		ft_utile.c insertion_sort.c chunk_sort.c
 	
 OBJ := $(patsubst %.c, %.o, $(SRC))
 OBJS := $(addprefix $(OBJ_DIR)/, $(OBJ))
