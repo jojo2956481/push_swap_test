@@ -6,7 +6,7 @@
 /*   By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 14:24:34 by lebeyssa          #+#    #+#             */
-/*   Updated: 2025/12/15 10:35:23 by lebeyssa         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 13:06:25 by lebeyssa         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int display_tape1(int *tab_a, int size_a);
 int	*ft_intdup(int *tab, int size);
 int display_tape2(int *tab_a, int size_a);
 int chunk_sort(int *tab_a, int size_a);
+int chunk_sort_test(int *tab_a, int size_a);
 
 
 #endif

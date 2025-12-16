@@ -6,7 +6,7 @@
 /*   By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 09:11:47 by lebeyssa          #+#    #+#             */
-/*   Updated: 2025/12/15 16:47:49 by lebeyssa         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 13:35:15 by lebeyssa         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,21 +111,34 @@ int	**take_index(int *tab_a, int size_a, int chunk_size)
 	return (tab_chunk);
 }
 
-int	calcul_index(int **tab_sort, int *tab_a, int chunk_size)
+int	calcul_index(int *tab_sort, int *tab_a, int size_a, int chunk_size)
 {
-	int count;
 	int i;
 	int j;
-	int k;
 
-	while ()
+	j = 0;
+	while (j < size_a)
 	{
-		
+		i = 0;
+		while (i < chunk_size)
+		{
+			if (tab_sort[i] == tab_a[j])
+				return (j);
+			i++;
+		}
+		j++;
 	}
-
-	
+	// ft_printf("j = %d\n", j);
+	return (j);
 }
 
+int isqrt(int n)
+{
+    int x = 0;
+    while ((x + 1) * (x + 1) <= n)
+        x++;
+    return (x);
+}
 
 int chunk_sort(int *tab_a, int size_a)
 {
@@ -141,7 +154,7 @@ int chunk_sort(int *tab_a, int size_a)
 	int j;
 	int y;
 
-	chunk_size = 2;
+	chunk_size = isqrt(size_a);
 	size_b = 0;
 	count = 0;
 	chunk_len = size_a / chunk_size;
@@ -150,16 +163,13 @@ int chunk_sort(int *tab_a, int size_a)
 		return (0);
 	tab_sort = take_index(tab_a, size_a, chunk_size);
 	i = 0;
-	ft_printf("%s\n", "done");
 	j = 0;
 	while (j < chunk_len)
 	{
 		i = 0;
 		while (i < chunk_size)
 		{
-			k = 0;
-			while (tab_sort[j][i] != tab_a[k])
-				k++;
+			k = calcul_index(tab_sort[j], tab_a, size_a, chunk_size);
 			y = 0;
 			while (y < k)
 			{
@@ -170,7 +180,30 @@ int chunk_sort(int *tab_a, int size_a)
 			i++;
 		}
 		j++;
-		
+	}
+	// ft_printf("%s\n", "done");
+	j = 0;
+	while (size_b > 0)
+	{
+		count += pa(tab_a, tab_b, &size_a, &size_b);
+		j = 0;
+		i = 0;
+		while (tab_a[j + 1] < tab_a[j])
+		{
+			count += sa(tab_a, size_a);
+			j++;
+			if (tab_a[j + 1] < tab_a[j])
+			{
+				count += ra(tab_a, size_a);
+				i++;
+			}
+			j = 0;
+		}
+		while (i > 0)
+		{
+			count += rra(tab_a, size_a);
+			i--;
+		}
 	}
 	free(tab_b);
 	return (count);

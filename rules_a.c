@@ -6,7 +6,7 @@
 /*   By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 11:17:20 by lebeyssa          #+#    #+#             */
-/*   Updated: 2025/12/12 12:38:36 by lebeyssa         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 13:26:28 by lebeyssa         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int	sa(int *a, int size_a)
 	temp = a[0];
 	a[0] = a[1];
 	a[1] = temp;
-	display_tape1(a, size_a);
+	ft_printf("%s\n", "sa");
+	// display_tape1(a, size_a);
 	return (1);
 }
 
@@ -45,7 +46,8 @@ int pa(int *a, int *b, int *size_a, int *size_b)
 		b[i] = b[i + 1];
 	(*size_b)--;
 	(*size_a)++;
-	display_tape(a, b, *size_a, *size_b);
+	// display_tape(a, b, *size_a, *size_b);
+	ft_printf("%s\n", "pa");
 	return (1);
 }
 
@@ -67,7 +69,8 @@ int	ra(int *a, int size_a)
 		i++;
 	}
 	a[size_a - 1] = temp;
-	display_tape1(a, size_a);
+	ft_printf("%s\n", "ra");
+	// display_tape1(a, size_a);
 	return (1);
 }
 
@@ -87,7 +90,8 @@ int	rra(int *a, int size_a)
 		i--;
 	}
 	a[0] = temp;
-	display_tape1(a, size_a);
+	ft_printf("%s\n", "rra");
+	// display_tape1(a, size_a);
 	return (1);
 }
 /*
