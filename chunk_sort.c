@@ -6,7 +6,7 @@
 /*   By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 09:11:47 by lebeyssa          #+#    #+#             */
-/*   Updated: 2025/12/16 13:35:15 by lebeyssa         ###   ########lyon.fr   */
+/*   Updated: 2025/12/17 15:30:39 by lebeyssa         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #include "libft.h"
 #include "ft_printf.h"
 #include <stdlib.h>
+
+#define GREEN   "\033[0;32m"
+#define RESET   "\033[0m"
 
 void    ft_swap(int *a, int *b)
 {
@@ -132,6 +135,27 @@ int	calcul_index(int *tab_sort, int *tab_a, int size_a, int chunk_size)
 	return (j);
 }
 
+int	find_max(int *tab_sort, int *tab_b, int size_b, int chunk_size)
+{
+	int i;
+	int j;
+
+	i = chunk_size;
+	while (i > 0)
+	{
+		j = 0;
+		while (j < size_b)
+		{
+			if (tab_sort[i] == tab_b[j])
+				return (j);
+			j++;
+		}
+		i--;
+	}
+	// ft_printf("j = %d\n", j);
+	return (j);
+}
+
 int isqrt(int n)
 {
     int x = 0;
@@ -162,7 +186,6 @@ int chunk_sort(int *tab_a, int size_a)
  	if (!tab_b)
 		return (0);
 	tab_sort = take_index(tab_a, size_a, chunk_size);
-	i = 0;
 	j = 0;
 	while (j < chunk_len)
 	{
@@ -181,29 +204,29 @@ int chunk_sort(int *tab_a, int size_a)
 		}
 		j++;
 	}
-	// ft_printf("%s\n", "done");
-	j = 0;
-	while (size_b > 0)
+	ft_printf("%s\n", GREEN "done" RESET);
+	j = chunk_len - 1;
+	while (j > 0)
 	{
-		count += pa(tab_a, tab_b, &size_a, &size_b);
-		j = 0;
 		i = 0;
-		while (tab_a[j + 1] < tab_a[j])
+		while (i < chunk_size)
 		{
-			count += sa(tab_a, size_a);
-			j++;
-			if (tab_a[j + 1] < tab_a[j])
+			k = find_max(tab_sort[j], tab_b, size_b, chunk_size);
+			y = 0;
+			while (y < k)
 			{
-				count += ra(tab_a, size_a);
-				i++;
+				count += rb(tab_b, size_b);
+				y++;
 			}
-			j = 0;
+			count += pa(tab_a, tab_b, &size_a, &size_b);
+			while (y > 0)
+			{
+				count += rrb(tab_b, size_b);
+				y--;
+			}
+			i++;
 		}
-		while (i > 0)
-		{
-			count += rra(tab_a, size_a);
-			i--;
-		}
+		j--;
 	}
 	free(tab_b);
 	return (count);

@@ -6,7 +6,7 @@
 /*   By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 12:57:27 by lebeyssa          #+#    #+#             */
-/*   Updated: 2025/12/16 13:28:32 by lebeyssa         ###   ########lyon.fr   */
+/*   Updated: 2025/12/17 09:45:05 by lebeyssa         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	sort_tab(int *tab, int size)
     int i;
 	int j;
 
-	i =0;
+	i = 0;
     while (i < size - 1)          
     {
 		j = 0;

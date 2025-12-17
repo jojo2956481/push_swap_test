@@ -6,7 +6,7 @@
 #    By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/06 13:31:56 by lebeyssa          #+#    #+#              #
-#    Updated: 2025/12/15 15:52:30 by lebeyssa         ###   ########lyon.fr    #
+#    Updated: 2025/12/17 13:15:13 by lebeyssa         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,17 +67,17 @@ OBJS := $(addprefix $(OBJ_DIR)/, $(OBJ))
 all : $(NAME)
 
 $(NAME) : $(OBJS) libft.h Makefile
-	ar rcs $@ $^
+	@ar rcs $@ $^
 
 $(OBJ_DIR)/%.o: %.c
 	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) -I $(INC) -c $< -o $@
+	@$(CC) $(CFLAGS) -I $(INC) -c $< -o $@
 
 clean : 
-	rm -rf $(OBJ_DIR)
+	@rm -rf $(OBJ_DIR)
 
 fclean : clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re : fclean all
 

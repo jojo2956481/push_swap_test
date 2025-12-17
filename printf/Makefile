@@ -6,7 +6,7 @@
 #    By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/17 15:05:06 by lebeyssa          #+#    #+#              #
-#    Updated: 2025/12/09 09:16:29 by lebeyssa         ###   ########lyon.fr    #
+#    Updated: 2025/12/17 13:14:58 by lebeyssa         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,13 +29,13 @@ $(NAME) : $(OBJS) $(SRC) $(INC) Makefile
 
 $(OBJ_DIR)/%.o: %.c
 	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) -I $(INC) -c $< -o $@
+	@$(CC) $(CFLAGS) -I $(INC) -c $< -o $@
 
 clean :
-	rm -rf $(OBJ_DIR)
+	@rm -rf $(OBJ_DIR)
 
 fclean : clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re : fclean all
 
