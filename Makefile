@@ -6,7 +6,7 @@
 #    By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/09 09:23:07 by lebeyssa          #+#    #+#              #
-#    Updated: 2025/12/17 13:33:54 by lebeyssa         ###   ########lyon.fr    #
+#    Updated: 2025/12/18 11:27:53 by lebeyssa         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ LIBS := $(LIBFT) $(PRINTF)
 all : $(NAME)
 
 $(NAME) : $(OBJS) $(SRC) $(INC) $(LIBS) Makefile
-	$(CC) $(FLAGS) $(OBJS) $(LIBS) -o $(NAME)
+	$(CC) $(FLAG) $(OBJS) $(LIBS) -o $(NAME)
 
 $(OBJ_DIR)/%.o: %.c
 	@mkdir -p $(OBJ_DIR)

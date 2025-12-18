@@ -6,7 +6,7 @@
 /*   By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 14:23:30 by lebeyssa          #+#    #+#             */
-/*   Updated: 2025/12/17 10:32:26 by lebeyssa         ###   ########lyon.fr   */
+/*   Updated: 2025/12/18 11:26:54 by lebeyssa         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ int	ft_checkdigit(char **str, int size)
 int	fill_tab(int *tab, int size_tab, char **str)
 {
 	int	i;
-	int	j;
 	int	x;
 
 	x = 0;

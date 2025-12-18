@@ -6,7 +6,7 @@
 /*   By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 09:11:47 by lebeyssa          #+#    #+#             */
-/*   Updated: 2025/12/17 15:30:39 by lebeyssa         ###   ########lyon.fr   */
+/*   Updated: 2025/12/18 11:04:35 by lebeyssa         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,8 +140,8 @@ int	find_max(int *tab_sort, int *tab_b, int size_b, int chunk_size)
 	int i;
 	int j;
 
-	i = chunk_size;
-	while (i > 0)
+	i = chunk_size - 1;
+	while (i > -1)
 	{
 		j = 0;
 		while (j < size_b)
@@ -179,6 +179,9 @@ int chunk_sort(int *tab_a, int size_a)
 	int y;
 
 	chunk_size = isqrt(size_a);
+	GREEN;
+	ft_printf("isqrt =%d\n", chunk_size);
+	RESET;
 	size_b = 0;
 	count = 0;
 	chunk_len = size_a / chunk_size;
@@ -186,6 +189,7 @@ int chunk_sort(int *tab_a, int size_a)
  	if (!tab_b)
 		return (0);
 	tab_sort = take_index(tab_a, size_a, chunk_size);
+	afficherTableau(chunk_len, chunk_size, tab_sort);
 	j = 0;
 	while (j < chunk_len)
 	{
@@ -204,9 +208,8 @@ int chunk_sort(int *tab_a, int size_a)
 		}
 		j++;
 	}
-	ft_printf("%s\n", GREEN "done" RESET);
 	j = chunk_len - 1;
-	while (j > 0)
+	while (j > -1)
 	{
 		i = 0;
 		while (i < chunk_size)

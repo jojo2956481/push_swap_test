@@ -6,7 +6,7 @@
 /*   By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 12:41:19 by lebeyssa          #+#    #+#             */
-/*   Updated: 2025/12/12 12:57:52 by lebeyssa         ###   ########lyon.fr   */
+/*   Updated: 2025/12/18 10:00:00 by lebeyssa         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,4 +142,23 @@ int	*ft_intdup(int *tab, int size)
 		i++;
 	}
 	return (dest);
+}
+
+void afficherTableau(int lignes, int colonnes, int **tableau) 
+{
+	int i;
+	int j;
+
+	i = 0;
+    while (i < lignes) 
+	{
+		j = 0;
+        while (j < colonnes) 
+		{
+            ft_printf("%d ", tableau[i][j]);
+			j++;
+        }
+		i++;
+        ft_printf("\n");
+    }
 }
