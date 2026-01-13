@@ -6,7 +6,7 @@
 /*   By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 09:11:47 by lebeyssa          #+#    #+#             */
-/*   Updated: 2025/12/18 11:04:35 by lebeyssa         ###   ########lyon.fr   */
+/*   Updated: 2026/01/13 15:56:36 by lebeyssa         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #define GREEN   "\033[0;32m"
 #define RESET   "\033[0m"
 
-void    ft_swap(int *a, int *b)
+static void    ft_swap(int *a, int *b)
 {
     int	temp;
 
@@ -29,7 +29,7 @@ void    ft_swap(int *a, int *b)
 }
 
 
-int	sort_tab(int *tab, int size)
+static int	sort_tab(int *tab, int size)
 {
     int i;
 	int j;
@@ -52,7 +52,7 @@ int	sort_tab(int *tab, int size)
 }
 
 
-int	copy_tab(int *tab_a, int *tab_sort, int size)
+static int	copy_tab(int *tab_a, int *tab_sort, int size)
 {
 	int i;
 
@@ -87,7 +87,7 @@ static int	fill_tab(int **tab_chunk, int *tab_sort, int chunk_size, int chunk_le
 	return (0);
 }
 
-int	**take_index(int *tab_a, int size_a, int chunk_size)
+static int	**take_index(int *tab_a, int size_a, int chunk_size)
 {
 	int *tab_sort;
 	int i;
@@ -114,7 +114,7 @@ int	**take_index(int *tab_a, int size_a, int chunk_size)
 	return (tab_chunk);
 }
 
-int	calcul_index(int *tab_sort, int *tab_a, int size_a, int chunk_size)
+static int	calcul_index(int *tab_sort, int *tab_a, int size_a, int chunk_size)
 {
 	int i;
 	int j;
@@ -135,7 +135,7 @@ int	calcul_index(int *tab_sort, int *tab_a, int size_a, int chunk_size)
 	return (j);
 }
 
-int	find_max(int *tab_sort, int *tab_b, int size_b, int chunk_size)
+static int	find_max(int *tab_sort, int *tab_b, int size_b, int chunk_size)
 {
 	int i;
 	int j;
@@ -156,13 +156,85 @@ int	find_max(int *tab_sort, int *tab_b, int size_b, int chunk_size)
 	return (j);
 }
 
-int isqrt(int n)
+static int isqrt(int n)
 {
     int x = 0;
     while ((x + 1) * (x + 1) <= n)
         x++;
     return (x);
 }
+/*
+int chunk_sort(int *tab_a, int size_a)
+{
+	int i;
+    int max_chunk;
+	int chunk_size;
+	int chunk_len;
+	int size_b;
+	int count;
+	int **tab_sort;
+	int *tab_b;
+	int k;
+	int j;
+	int y;
+
+	chunk_size = isqrt(size_a);
+	GREEN;
+	ft_printf("isqrt =%d\n", chunk_size);
+	RESET;
+	size_b = 0;
+	count = 0;
+	chunk_len = size_a / chunk_size;
+ 	tab_b = ft_calloc(size_a, sizeof(int));
+ 	if (!tab_b)
+		return (0);
+	tab_sort = take_index(tab_a, size_a, chunk_size);
+	afficherTableau(chunk_len, chunk_size, tab_sort);
+	j = 0;
+	while (j < chunk_len)
+	{
+		i = 0;
+		while (i < chunk_size)
+		{
+			k = calcul_index(tab_sort[j], tab_a, size_a, chunk_size);
+			y = 0;
+			while (y < k)
+			{
+				count += ra(tab_a, size_a);
+				y++;
+			}
+			count += pb(tab_a, tab_b, &size_a, &size_b);
+			i++;
+		}
+		j++;
+	}
+	j = chunk_len - 1;
+	while (j > -1)
+	{
+		i = 0;
+		while (i < chunk_size)
+		{
+			k = find_max(tab_sort[j], tab_b, size_b, chunk_size);
+			y = 0;
+			while (y < k)
+			{
+				count += rb(tab_b, size_b);
+				y++;
+			}
+			count += pa(tab_a, tab_b, &size_a, &size_b);
+			while (y > 0)
+			{
+				count += rrb(tab_b, size_b);
+				y--;
+			}
+			i++;
+		}
+		j--;
+	}
+	free(tab_b);
+	return (count);
+}
+*/
 
 int chunk_sort(int *tab_a, int size_a)
 {

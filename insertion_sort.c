@@ -6,7 +6,7 @@
 /*   By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 12:28:30 by lebeyssa          #+#    #+#             */
-/*   Updated: 2026/01/05 16:20:11 by lebeyssa         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 14:44:41 by lebeyssa         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,21 +103,6 @@ int	insertion_sort(int *tab_a, int size)
 		count += rra(tab_a, size_a);
 		i--;
 	}
-	// if ((size - i) <= (size / 2))
-	// {
-	// 	while (i > 0)
-	// 	{
-	// 		count += rra(tab_a, size_a);
-	// 		i--;
-	// 	}
-	// }
-	// if ((size - i) > (size / 2))
-	// {
-	// 	while (i > 0)
-	// 	{
-	// 		count += ra(tab_a, size_a);
-	// 		i--;
-	// 	}
-	// }
+	
 	return (count);
 }

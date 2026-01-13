@@ -6,7 +6,7 @@
 /*   By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 14:23:30 by lebeyssa          #+#    #+#             */
-/*   Updated: 2026/01/05 16:20:50 by lebeyssa         ###   ########lyon.fr   */
+/*   Updated: 2026/01/13 15:22:34 by lebeyssa         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,8 +111,8 @@ int	main(int argc, char **argv)
 		ft_printf("%s\n", "Error");
 		return (0);
 	}
-	k = insertion_sort(tab, size);
-	display(tab, size, k);
+	k = radix(tab, size);
+	//display(tab, size, k);
 	return (0);
 }
 
