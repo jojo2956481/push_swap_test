@@ -6,7 +6,7 @@
 /*   By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 14:24:34 by lebeyssa          #+#    #+#             */
-/*   Updated: 2026/01/13 10:29:08 by lebeyssa         ###   ########lyon.fr   */
+/*   Updated: 2026/01/14 10:23:25 by lebeyssa         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int chunk_sort(int *tab_a, int size_a);
 int chunk_sort_test(int *tab_a, int size_a);
 void afficherTableau(int lignes, int colonnes, int **tableau);
 int	radix(int *tab, int size);
+int chunk_sort_opt(int *tab_a, int size_a);
 
 
 #endif

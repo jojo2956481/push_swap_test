@@ -6,7 +6,7 @@
 /*   By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 14:23:30 by lebeyssa          #+#    #+#             */
-/*   Updated: 2026/01/13 15:22:34 by lebeyssa         ###   ########lyon.fr   */
+/*   Updated: 2026/01/14 11:26:36 by lebeyssa         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ check si l'input est un int et si c'est un digit.
 je check pas encore les doublons.*/
 
 // check doublon
-int	check_same(int *tab, int size)
+static int	check_same(int *tab, int size)
 {
 	int	i;
 	int	j;
@@ -43,7 +43,7 @@ int	check_same(int *tab, int size)
 
 
 // check digit
-int	ft_checkdigit(char **str, int size)
+static int	ft_checkdigit(char **str, int size)
 {
 	int	i;
 	int	j;
@@ -67,7 +67,7 @@ int	ft_checkdigit(char **str, int size)
 }
 
 // remplie le tableau d'int
-int	fill_tab(int *tab, int size_tab, char **str)
+static int	fill_tab(int *tab, int size_tab, char **str)
 {
 	int	i;
 	int	x;
@@ -111,7 +111,7 @@ int	main(int argc, char **argv)
 		ft_printf("%s\n", "Error");
 		return (0);
 	}
-	k = radix(tab, size);
+	k = chunk_sort_opt(tab, size);
 	//display(tab, size, k);
 	return (0);
 }
