@@ -6,7 +6,7 @@
 /*   By: lebeyssa <lebeyssa@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 16:13:11 by lebeyssa          #+#    #+#             */
-/*   Updated: 2026/01/13 15:22:29 by lebeyssa         ###   ########lyon.fr   */
+/*   Updated: 2026/01/14 13:41:34 by lebeyssa         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,24 @@ int	copy_tab(int *tab_a, int *tab_sort, int size)
 	}
 	return (0);
 }
+
+int	indexation(int *tab_sort, int *tab, int *tab_index, int size)
+{
+	int i;
+	int y;
+
+	y = 0;
+	while (y < size)
+	{
+		i = 0;
+		while (tab[y] != tab_sort[i])
+			i++;
+		tab_index[y] = i;
+		y++;
+	}
+	return (0);
+}
+
 /*
 int	indexation(int *tab_sort, int *tab, int *tab_index, int size)
 {
@@ -93,23 +111,6 @@ int	indexation(int *tab_sort, int *tab, int *tab_index, int size)
 	return (0);
 }
 */
-int	indexation(int *tab_sort, int *tab, int *tab_index, int size)
-{
-	int i;
-	int y;
-
-	y = 0;
-	while (y < size)
-	{
-		i = 0;
-		while (tab[y] != tab_sort[i])
-			i++;
-		tab_index[y] = i;
-		y++;
-	}
-	return (0);
-}
-
 int is_sorted(int *tab_a, int size)
 {
 	int i;
@@ -123,7 +124,7 @@ int is_sorted(int *tab_a, int size)
 	return (1);
 }
 
-/*
+
 int	radix(int *tab, int size)
 {
 	int	i;
@@ -175,14 +176,16 @@ int	radix(int *tab, int size)
 		}
 		while (size_b > 0)
 			count += pa(tab_a, tab_b, &size_a, &size_b);
+		if (is_sorted(tab_a, size_a) == 1)
+        	break;
 		bit++;
-		ft_printf("%s\n",GREEN "done" RESET);
+		//ft_printf("%s\n",GREEN "done" RESET);
 		indexation(tab_sort, tab, tab_index, size);
 	}
 	return (count);
 }
-*/
 
+/*
 int	radix(int *tab, int size)
 {
 	int	i;
@@ -236,3 +239,4 @@ int	radix(int *tab, int size)
 	}
 	return (count);
 }
+*/
